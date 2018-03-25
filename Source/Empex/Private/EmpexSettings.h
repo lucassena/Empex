@@ -7,7 +7,6 @@
 
 #include "EmpexSettings.generated.h"
 
-/** Mesh paint color view modes (somewhat maps to EVertexColorViewMode engine enum.) */
 UENUM()
 enum class EEmpexEnumDataExample : uint8
 {

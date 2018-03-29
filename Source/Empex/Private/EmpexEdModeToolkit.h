@@ -25,10 +25,10 @@ public:
 	virtual FName GetToolkitFName() const override;
 	virtual FText GetBaseToolkitName() const override;
 	virtual class FEdMode* GetEditorMode() const override;
-	virtual TSharedPtr<class SWidget> GetInlineContent() const override { return ModeTools; }
+	virtual TSharedPtr<class SWidget> GetInlineContent() const override { return ToolkitWidget; }
 
 private:
-	//TSharedPtr<SWidget> ToolkitWidget;
+	TSharedPtr<SWidget> ToolkitWidget;
 
 	TSharedPtr<SEmpexEditModeTools> ModeTools;
 

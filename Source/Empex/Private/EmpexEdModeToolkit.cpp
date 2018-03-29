@@ -15,7 +15,6 @@
 
 void FEmpexEdModeToolkit::Init(const TSharedPtr<IToolkitHost>& InitToolkitHost)
 {
-	/*
 	struct Locals
 	{
 		static bool IsWidgetEnabled()
@@ -57,9 +56,8 @@ void FEmpexEdModeToolkit::Init(const TSharedPtr<IToolkitHost>& InitToolkitHost)
 	};
 
 	const float Factor = 256.0f;
-	*/
 
-	/*SAssignNew(ToolkitWidget, SBorder)
+	SAssignNew(ToolkitWidget, SBorder)
 		.HAlign(HAlign_Center)
 		.Padding(25)
 		.IsEnabled_Static(&Locals::IsWidgetEnabled)
@@ -103,7 +101,7 @@ void FEmpexEdModeToolkit::Init(const TSharedPtr<IToolkitHost>& InitToolkitHost)
 					Locals::MakeButton(LOCTEXT("DownButtonLabel", "Down"), FVector(0, 0, -Factor))
 				]
 
-		];*/
+		];
 		
 	FModeToolkit::Init(InitToolkitHost);
 }

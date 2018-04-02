@@ -13,6 +13,11 @@
 
 #define LOCTEXT_NAMESPACE "FEmpexEdModeToolkit"
 
+//FEmpexEdModeToolkit::FEmpexEdModeToolkit()
+//{
+//
+//}
+
 void FEmpexEdModeToolkit::Init(const TSharedPtr<IToolkitHost>& InitToolkitHost)
 {
 	struct Locals

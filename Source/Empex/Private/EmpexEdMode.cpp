@@ -6,10 +6,6 @@
 #include "SEmpexEditModeTools.h"
 #include "EmpexSettings.h"
 #include "EditorModeManager.h"
-#include "Engine/Selection.h"
-#include "SlateApplication.h"
-#include "ModuleManager.h"
-#include "Toolkits/AssetEditorToolkit.h"
 #include "Empex.h"
 
 const FEditorModeID FEmpexEdMode::EM_EmpexEdModeId = TEXT("EM_EmpexEdMode");

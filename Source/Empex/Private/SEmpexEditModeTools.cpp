@@ -83,6 +83,7 @@ void SEmpexEditModeTools::Construct(const FArguments& InArgs)
 	Settings = NewObject<UEmpexSettings>(GetTransientPackage(), *LOCTEXT("SettingsName", "EmpexEdMode Settings").ToString());
 
 	float Factor = Settings->GetFactor();
+	// const float Factor = 256.0f;
 
 	ChildSlot
 	[

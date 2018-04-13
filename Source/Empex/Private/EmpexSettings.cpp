@@ -4,7 +4,7 @@
 
 UEmpexSettings::UEmpexSettings(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer),
-	Factor(256.0f),
+	Factor(200.0f),
 	bBooleanBar(false),
 	EnumDataExample(EEmpexEnumDataExample::Foo)
 {

@@ -18,31 +18,32 @@ enum class EEmpexEnumDataExample : uint8
 UCLASS()
 class UEmpexSettings : public UObject
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 
 
 public:
 	// UObject interface
 	virtual void PostEditChangeProperty(struct FPropertyChangedEvent& PropertyChangedEvent) override;
 
+	UEmpexSettings(const FObjectInitializer& ObjectInitializer);
 	~UEmpexSettings();
 
-	float GetFloatFoo() const { return FloatFoo; }
-	void SetFloatFoo(float InRadius);
+	float GetFactor() const { return Factor; }
+	void SetFactor(float InRadius);
 protected:
 	/** Example float property */
-	UPROPERTY(EditAnywhere, Category = CategoryOne, meta = (DisplayName = "Float Foo"))
-	float FloatFoo;
+	UPROPERTY(EditAnywhere, Category = "Global Settings")
+	float Factor;
 public:
 	/** Min and Max FloatFoo range retrieved from config */
-	float FloatFooMin;
-	float FloatFooMax;
+	float FactorMin;
+	float FactorMax;
 
 	/** Example boolean property */
-	UPROPERTY(EditAnywhere, Category = CategoryOne, meta = (DisplayName = "Boolean Bar"))
+	UPROPERTY(EditAnywhere, Category = "Global Settings", meta = (DisplayName = "Boolean Bar"))
 	bool bBooleanBar;
 
 	/** Example enum property */
-	UPROPERTY(EditAnywhere, Category = AnotherCategory)
+	UPROPERTY(EditAnywhere, Category = "Global Settings")
 	EEmpexEnumDataExample EnumDataExample;
 };

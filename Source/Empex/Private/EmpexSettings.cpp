@@ -4,30 +4,30 @@
 
 UEmpexSettings::UEmpexSettings(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer),
-	FloatFoo(128.0f),
-	bBooleanBar(true),
+	Factor(256.0f),
+	bBooleanBar(false),
 	EnumDataExample(EEmpexEnumDataExample::Foo)
 {
-	const float FloatFooClampMin = 0.01f, FloatFooClampMax = 250000.0f;
+	const float FactorClampMin = 1.0f, FactorClampMax = 4096.0f;
 
-	FloatFooMin = 1.f;
-	FloatFooMax = 256.f;
-	FloatFoo = (float)FMath::Clamp(FloatFoo, FloatFooClampMin, FloatFooClampMax);
+	FactorMin = 1.f;
+	FactorMax = 4096.f;
+	Factor = (float)FMath::Clamp(Factor, FactorClampMin, FactorClampMax);
 }
 
 UEmpexSettings::~UEmpexSettings()
 {
 }
 
-void UEmpexSettings::SetFloatFoo(float InRadius)
+void UEmpexSettings::SetFactor(float InRadius)
 {
-	FloatFoo = (float)FMath::Clamp(InRadius, FloatFooMin, FloatFooMax);
+	Factor = (float)FMath::Clamp(InRadius, FactorMin, FactorMax);
 }
 
 void UEmpexSettings::PostEditChangeProperty(struct FPropertyChangedEvent& PropertyChangedEvent)
 {
-	if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UEmpexSettings, FloatFoo))
+	if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UEmpexSettings, Factor))
 	{
-		FloatFoo = (float)FMath::Clamp(FloatFoo, FloatFooMin, FloatFooMax);
+		Factor = (float)FMath::Clamp(Factor, FactorMin, FactorMax);
 	}
 }

@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Widgets/SCompoundWidget.h"
-#include "DeclarativeSyntaxSupport.h"
+#include "Widgets/DeclarativeSyntaxSupport.h"
 
 class IDetailsView;
 
@@ -20,10 +20,16 @@ public:
 	void SetDetailsObjects(const TArray<TWeakObjectPtr<>>& InObjects);
 
 private:
+	TSharedPtr<SWidget> ToolkitWidget;
+	
 	/** The details view we do most of our work within */
 	TSharedPtr<IDetailsView> DetailsView;
 
 	/** Display set up for property */
 	bool ShouldShowPropertyOnDetailCustomization(const struct FPropertyAndParent& InPropertyAndParent) const;
 	bool IsReadOnlyPropertyOnDetailCustomization(const struct FPropertyAndParent& InPropertyAndParent) const;
+
+private:
+	/** Settings object used to insert controls into the details panel */
+	UEmpexSettings* Settings;
 };
